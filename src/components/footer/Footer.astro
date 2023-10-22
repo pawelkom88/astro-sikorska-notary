@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import sikorskaNotaryLogo from "../../images/logo-webp.webp";
 import facultyLogo from "../../images/faculty-logo-webp.webp";
 import "../../css/partials/footer/footer.css";
@@ -9,10 +9,9 @@ import "../../css/partials/footer/footer.css";
   <ul class="footer__contact">
     <li>
       <a href="/">
-        <Picture
+        <Image
           width="105"
           height="105"
-          formats={["avif", "webp"]}
           class="footer__contact-logo"
           src={sikorskaNotaryLogo}
           alt="Sikorska notary logo"
@@ -52,13 +51,11 @@ import "../../css/partials/footer/footer.css";
         ></path>
       </svg>
       <div>
-        119 Pen Park Road,
-        <br />
-         Southmead, Bristol, BS10 6BS
+        <p>119 Pen Park Road,</p>
+        <p>Southmead, Bristol, BS10 6BS</p>
       </div>
     </li>
 
-    <br />
     <li class="address">
       <svg
         fill="#ecc96e"
@@ -84,13 +81,13 @@ import "../../css/partials/footer/footer.css";
           </g>
         </g>
       </svg>
-       Opening times:
-      <br />
-       Monday to Friday
-      <br />
-       10:00 - 17:00
+      <div>
+        <p>Opening times:</p>
+        <p>Monday to Friday</p>
+        <p>10:00 - 17:00</p>
+      </div>
     </li>
-    <br />
+
     <li class="social__media">
       <a
         aria-label="Sikorska Notary facebook profile"
@@ -171,10 +168,9 @@ import "../../css/partials/footer/footer.css";
   </ul>
   <div class="footer__about">
     <a href="https://www.thenotariessociety.org.uk/" target="_blank" rel="noopener">
-      <Picture
+      <Image
         width="60"
         height="88"
-        formats={["avif", "webp"]}
         class="faculty-logo"
         src={facultyLogo}
         alt="The Faculty Office Logo"

@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import logo from "../../images/logo-webp.webp";
 
 export const routes = {
@@ -36,13 +36,7 @@ const styles = {
 <header style={styles}>
   <nav class="nav-bar">
     <a class="logo" href="/">
-      <Picture
-        width="105"
-        height="105"
-        src={logo}
-        formats={["avif", "webp"]}
-        alt="Sikorska notary logo"
-      />
+      <Image srcset={logo + " 1x, " + logo + " 2x"} class="logo" width="80" height="80" src={logo} alt="Sikorska notary logo" />
     </a>
     <ul class="nav-links">
       {
@@ -142,131 +136,131 @@ const styles = {
 </div>
 
 <script>
-const hamburger = document.querySelector(".hamburger") as HTMLElement;
-const mobileLink = document.querySelectorAll(".mobile__menu-link");
-const contactLink = mobileLink[mobileLink.length - 1];
-const body = document.querySelector("body") as HTMLElement;
-const ctaBtn = document.querySelector(".cta-btn") as HTMLButtonElement;
-const modal = document.querySelector(".modal") as HTMLDivElement;
-const overlay = document.querySelector(".overlay") as HTMLDivElement;
-const closeBtn = document.querySelector(".close") as HTMLButtonElement;
+  const hamburger = document.querySelector(".hamburger") as HTMLElement;
+  const mobileLink = document.querySelectorAll(".mobile__menu-link");
+  const contactLink = mobileLink[mobileLink.length - 1];
+  const body = document.querySelector("body") as HTMLElement;
+  const ctaBtn = document.querySelector(".cta-btn") as HTMLButtonElement;
+  const modal = document.querySelector(".modal") as HTMLDivElement;
+  const overlay = document.querySelector(".overlay") as HTMLDivElement;
+  const closeBtn = document.querySelector(".close") as HTMLButtonElement;
 
-// open mobile menu by clicking on hamburger icon
-hamburger.addEventListener("click", openMobileMenu);
+  // open mobile menu by clicking on hamburger icon
+  hamburger.addEventListener("click", openMobileMenu);
 
-// close mobile menu after clicking in contact
-contactLink.addEventListener("click", openMobileMenu);
+  // close mobile menu after clicking in contact
+  contactLink.addEventListener("click", openMobileMenu);
 
-ctaBtn.addEventListener("click", addActiveClasses);
+  ctaBtn.addEventListener("click", addActiveClasses);
 
-// close modal after clicking on overlay
-overlay.addEventListener("click", removeActiveClasses);
+  // close modal after clicking on overlay
+  overlay.addEventListener("click", removeActiveClasses);
 
-// close modal after clickingclose button
-closeBtn?.addEventListener("click", removeActiveClasses);
+  // close modal after clickingclose button
+  closeBtn?.addEventListener("click", removeActiveClasses);
 
-// close modal using ESC key
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    removeActiveClasses();
-  }
-});
-
-// close modal ENTER key Enter when button is focused
-closeModalByKey();
-
-trapFocus();
-
-//////////////////////////////////////
-///// functions declarations ///////
-//////////////////////////////////////
-
-function removeActiveClasses() {
-  modal.classList.remove("modal-active");
-  overlay.classList.remove("modal-active");
-}
-
-function closeModalByKey() {
-  document.addEventListener(
-    "focusin",
-    () => {
-      if (document.activeElement === closeBtn) {
-        closeBtn?.addEventListener("keydown", e => {
-          if (e.key === "Enter") {
-            removeActiveClasses();
-          }
-        });
-      }
-    },
-    true
-  );
-}
-
-function addActiveClasses() {
-  modal.classList.add("modal-active");
-  overlay.classList.add("modal-active");
-  closeBtn?.focus({ preventScroll: true });
-}
-
-function openMobileMenu() {
-  const mobileMenu = document.querySelector(".mobile__menu") as HTMLElement;
-  const lines = document.querySelectorAll(".line");
-
-  mobileMenu.classList.toggle("menu-open");
-  body.classList.toggle("overflow");
-
-  lines.forEach(line => {
-    line.classList.toggle("open");
-    line.classList.toggle("hamburger-open");
-  });
-
-  if (hamburger.getAttribute("aria-expanded") === "false") {
-    hamburger.setAttribute("aria-expanded", "true");
-  }
-  hamburger.setAttribute("aria-expanded", "false");
-}
-
-function trapFocus() {
-  const firstEl = closeBtn;
-  const lastEl = document.querySelector(".btn-focus");
-
-  modal.addEventListener("keydown", e => {
-    const submitBtn = document.querySelector(".form_btn") as HTMLButtonElement;
-    const isTabPressed = e.key === "Tab";
-    const hasFocus = document.activeElement;
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (e.shiftKey) {
-      if (hasFocus === firstEl) {
-        submitBtn.focus();
-        e.preventDefault();
-      }
-    } else {
-      if (hasFocus === lastEl) {
-        closeBtn.focus();
-        e.preventDefault();
-      }
+  // close modal using ESC key
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      removeActiveClasses();
     }
   });
-}
 
-// function maternityModal() {
-//   const maternityModal = document.querySelectorAll(".maternity-modal");
-//   const closeBtn = document.querySelector(".close-maternity-modal");
+  // close modal ENTER key Enter when button is focused
+  closeModalByKey();
 
-//   setTimeout(() => {
-//     maternityModal.forEach(modal => modal.classList.add("modal-active"));
-//   }, 4000);
+  trapFocus();
 
-//   closeBtn?.addEventListener("click", () => {
-//     document
-//       .querySelectorAll(".maternity-modal")
-//       .forEach(modal => modal.classList.remove("modal-active"));
-//   });
-// }
+  //////////////////////////////////////
+  ///// functions declarations ///////
+  //////////////////////////////////////
 
-// maternityModal();
+  function removeActiveClasses() {
+    modal.classList.remove("modal-active");
+    overlay.classList.remove("modal-active");
+  }
+
+  function closeModalByKey() {
+    document.addEventListener(
+      "focusin",
+      () => {
+        if (document.activeElement === closeBtn) {
+          closeBtn?.addEventListener("keydown", e => {
+            if (e.key === "Enter") {
+              removeActiveClasses();
+            }
+          });
+        }
+      },
+      true
+    );
+  }
+
+  function addActiveClasses() {
+    modal.classList.add("modal-active");
+    overlay.classList.add("modal-active");
+    closeBtn?.focus({ preventScroll: true });
+  }
+
+  function openMobileMenu() {
+    const mobileMenu = document.querySelector(".mobile__menu") as HTMLElement;
+    const lines = document.querySelectorAll(".line");
+
+    mobileMenu.classList.toggle("menu-open");
+    body.classList.toggle("overflow");
+
+    lines.forEach(line => {
+      line.classList.toggle("open");
+      line.classList.toggle("hamburger-open");
+    });
+
+    if (hamburger.getAttribute("aria-expanded") === "false") {
+      hamburger.setAttribute("aria-expanded", "true");
+    }
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  function trapFocus() {
+    const firstEl = closeBtn;
+    const lastEl = document.querySelector(".btn-focus");
+
+    modal.addEventListener("keydown", e => {
+      const submitBtn = document.querySelector(".form_btn") as HTMLButtonElement;
+      const isTabPressed = e.key === "Tab";
+      const hasFocus = document.activeElement;
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        if (hasFocus === firstEl) {
+          submitBtn.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (hasFocus === lastEl) {
+          closeBtn.focus();
+          e.preventDefault();
+        }
+      }
+    });
+  }
+
+  // function maternityModal() {
+  //   const maternityModal = document.querySelectorAll(".maternity-modal");
+  //   const closeBtn = document.querySelector(".close-maternity-modal");
+
+  //   setTimeout(() => {
+  //     maternityModal.forEach(modal => modal.classList.add("modal-active"));
+  //   }, 4000);
+
+  //   closeBtn?.addEventListener("click", () => {
+  //     document
+  //       .querySelectorAll(".maternity-modal")
+  //       .forEach(modal => modal.classList.remove("modal-active"));
+  //   });
+  // }
+
+  // maternityModal();
 </script>

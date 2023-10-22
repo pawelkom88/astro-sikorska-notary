@@ -7,7 +7,6 @@ import "../../css/partials/navigation/navigation.css";
 
 const currentPath = Astro.url.pathname;
 ---
-
 {
   currentPath === "/" ? (
     <section class="hero">
@@ -18,41 +17,3 @@ const currentPath = Astro.url.pathname;
     <Header />
   )
 }
-
-<style>
-  .line {
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    width: 25px;
-    height: 2px;
-    background-color: var(--teriary);
-    transition: 0.8s;
-    border-radius: 1px;
-  }
-  .line:nth-child(2) {
-    position: absolute;
-    top: 7px;
-  }
-  .line:nth-child(3) {
-    position: absolute;
-    top: 12px;
-  }
-
-  .line:first-child.open {
-    transform: rotate(-45deg) translate(-0.7rem, -0.1rem);
-  }
-
-  .line:nth-child(2).open {
-    opacity: 0;
-  }
-
-  .line:nth-child(3).open {
-    transform: rotate(45deg) translate(-0.5rem, 0.2rem);
-  }
-
-  .hamburger-open {
-    background-color: var(--primary);
-    z-index: 100;
-  }
-</style>
