@@ -1,0 +1,18 @@
+---
+import Card from "./Card.astro";
+import {testimonialData} from "./data";
+import "../../css/partials/reviews/reviews.css";
+---
+
+<section class="reviews">
+    <h2 class="heading">Customers reviews</h2>
+    <div class='card-container'>
+      {
+        testimonialData.map(review => {
+          return <Card key={review.id} name={review.name} content={review.content} />;
+        })
+      }
+    </div>
+    <br />
+    <a target="_blank" rel="noreferrer" class="reviews-link" href="https://www.google.com/search?client=firefox-b-d&q=sikorskanotary+brisotl#lrd=0x42536421cad8abc3:0xdbc223e0ef4366cf,1,,,,"> more reviews</a>
+</section>

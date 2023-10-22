@@ -1,0 +1,114 @@
+.footer {
+  display: flex;
+  align-items: flex-start;
+  color: var(--teriary);
+  padding: 10vw 12vw;
+  background-color: var(--primary);
+  letter-spacing: 1.2px;
+}
+@media (max-width: 1441px) {
+  .footer {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+.footer__contact,
+.footer__services,
+.footer__about {
+  flex-basis: 100%;
+}
+@media (max-width: 1441px) {
+  .footer__contact,
+  .footer__services,
+  .footer__about {
+    margin: 2rem 0;
+  }
+}
+.footer__contact-logo {
+  margin-bottom: 2rem;
+}
+@media (max-width: 1441px) {
+  .footer__contact-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+}
+.footer__services-links {
+  position: relative;
+  margin: 1.5rem 0;
+}
+.footer__services-links:hover {
+  color: var(--secondary);
+}
+.footer__services-links::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 75%;
+  height: 1px;
+  background-color: var(--secondary);
+}
+@media (max-width: 1441px) {
+  .footer__services-links::after {
+    width: 100%;
+    top: 1.8rem;
+  }
+}
+@media (min-width: 1921px) {
+  .footer__services-links::after {
+    width: 70%;
+    top: 1.8rem;
+  }
+}
+.footer__services-title {
+  font-weight: bold;
+}
+@media (max-width: 1441px) {
+  .footer__services-title {
+    text-align: center;
+  }
+}
+.footer .address {
+  display: flex;
+}
+.footer .phone svg,
+.footer .mail svg,
+.footer .address svg {
+  max-width: 20px;
+  margin-right: 1.5rem;
+}
+@media (max-width: 575px) {
+  .footer .phone svg,
+  .footer .mail svg,
+  .footer .address svg {
+    max-width: 20px;
+  }
+}
+
+.social__media,
+.phone,
+.mail {
+  display: flex;
+  place-items: center;
+  margin: 1.5rem 0;
+}
+.social__media a,
+.phone a,
+.mail a {
+  width: 25px;
+  margin-right: 2rem;
+}
+.social__media a:hover,
+.phone a:hover,
+.mail a:hover {
+  color: var(--secondary);
+}
+
+.faculty-logo {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  max-width: 80px;
+} 

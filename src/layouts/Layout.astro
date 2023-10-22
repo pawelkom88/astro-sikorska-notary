@@ -1,0 +1,46 @@
+---
+import MainHead from "../seo/main-head/MainHead.astro";
+import Navigation from "../components/navigation-desktop/NavigationDesktop.astro";
+import Footer from "../components/footer/Footer.astro";
+import "../css/style.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/playfair-display";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  jsonLDType?: "website" | "post";
+}
+
+const {
+  title = "Bristol's Premier Mobile Notary - Available Weekends | Sikorska Notary",
+  description = "Sikorska Notary in Bristol offers convenient mobile notary services, including unique weekend availability. Get professional, tailored notarial solutions promptly, even outside regular business hours.",
+  image = "https://www.sikorskanotary.co.uk/social-media-card.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <MainHead {title} {description} {image} />
+  <a href="#main" class="visible-hidden">Jump directly to main content</a>
+  <body>
+    <Navigation />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+
+  <style is:global>
+    :root {
+      --primary: #002b12;
+      --secondary: #ecc96e;
+      --teriary: #fff;
+      --accent: #69502b;
+      --text: #111827;
+      --font-primary: "Inter Variable", sans-serif;
+      --font-secondary: "Playfair Display Variable", sans-serif;
+    }
+  </style>
+</html>

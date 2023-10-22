@@ -1,0 +1,71 @@
+---
+import Star from "./Star.astro";
+
+const {name, content} = Astro.props;
+---
+
+<blockquote class="card">
+  <div class="testimonials card-wrapper">
+    <div>
+      <div class="card-stars">
+        {[1, 2, 3, 4, 5].map((_, idx) => <Star key={idx} />)}
+      </div>
+      <h3 class="card-heading">{name}</h3>
+    </div>
+  </div>
+  <p class="card-content paragraph">{content}</p>
+</blockquote>
+
+<style>
+  .card {
+    overflow: hidden;
+font-size: 1rem;
+position: relative; 
+z-index: 10; 
+padding: 2rem; 
+border-radius: 0.5rem; 
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+  }
+
+
+.card-wrapper {
+    display: flex; 
+gap: 1rem; 
+align-items: center; 
+}
+
+.card-stars {
+    display: flex; 
+margin-bottom: 0.5rem; 
+gap: 0.25rem; 
+justify-content: flex-start; 
+
+
+}
+
+.card-heading {
+    margin-top: 0.25rem; 
+font-size: 1.125rem;
+line-height: 1.75rem; 
+font-weight: 500; 
+
+
+
+}
+  .card-content {
+    margin-top: 1rem; 
+  }
+
+
+  .testimonials::before {
+      position: absolute;
+  content: "\201C";
+  top: -4rem;
+  left: 5px;
+  font-size: 12rem;
+  font-family: var(--font-secondary);
+  color: var(--secondary-clr);
+  z-index: 9;
+  opacity: 0.05;
+}
+</style>

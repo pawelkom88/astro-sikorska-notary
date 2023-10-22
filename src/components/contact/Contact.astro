@@ -1,0 +1,66 @@
+---
+import { Picture } from "astro:assets";
+import "../../css/partials/contact/contact.css";
+import "../../css/partials/form/form.css";
+import officeImage from "../../images/Sikorska-Notary-Office.webp";
+---
+
+<section id="contact" class="contact">
+  <article class="contact__about">
+    <h2 class="heading">Get in touch</h2>
+    <Picture
+      width="798"
+      height="449"
+      formats={["avif", "webp"]}
+      class="contact__office"
+      src={officeImage}
+      alt="Sikorska Notary office"
+    />
+    <br />
+    <br />
+    <p class="paragraph">
+      If you are looking for a mobile notary who can provide you with a full range of notarial
+      services, look no further. I am flexible, reliable, and I can meet you at any location that
+      suits you best. Whether it is your office, home, business or residence, I will be there to
+      help you with your notarial matter in the most efficient and convenient way possible.
+    </p>
+    <br />
+    <p class="paragraph">
+      I offer a mobile notary service during weekends and out of office hours.
+    </p>
+    <br />
+    <p class="paragraph">
+      To enquire about my services please
+      <a class="underline" href="mailto:ps@sikorskanotary.co.uk">email me</a> or complete the
+      contact form below. I’ll review your request, and get back to you with a quote.
+    </p>
+  </article>
+  <form class="form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="redirect" value="/success" />
+    <input type="hidden" name="subject" value="New message from your website" />
+    <input type="hidden" name="apikey" value="e78b38a7-90c7-4e93-9b00-da8a681984f6" />
+    <label for="name">Name:</label>
+    <input id="name" title="name" type="text" placeholder="John Smith" required />
+    <label for="e-mail">E-mail:</label>
+    <input
+      id="e-mail"
+      title="e-mail"
+      name="e-mail"
+      type="text"
+      placeholder="JohnSmith@gmail.com"
+      required
+    />
+    <label for="message">Your enquiry:</label>
+    <textarea
+      title="message"
+      name="message"
+      id="message"
+      cols="38"
+      rows="10"
+      required
+      placeholder="Your message"></textarea>
+    <input id="checkbox" type="checkbox" name="botcheck" style="display: none" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+    <button type="submit" class="btn form_btn">Submit</button>
+  </form>
+</section>

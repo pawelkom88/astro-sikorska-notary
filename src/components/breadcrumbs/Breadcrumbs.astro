@@ -1,0 +1,23 @@
+---
+type Link = {
+  name: string;
+  href: string;
+};
+
+const { links, current } = Astro.props;
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="current" aria-current="page">{current}</li>
+    {
+      links.map((link: Link) => (
+        <li>
+          <a class="link" href={link.href}>
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

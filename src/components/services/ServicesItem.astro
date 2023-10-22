@@ -1,0 +1,31 @@
+---
+const { title, content } = Astro.props;
+---
+
+<li class="cs-faq-item">
+  <button class="cs-button">
+    <span class="cs-button-text">{title}</span>
+  </button>
+  <p class="cs-item-p">
+    {content}
+  </p>
+</li>
+
+<script>
+  const faqItems = Array.from(document.querySelectorAll(".cs-faq-item"));
+
+  for (const item of faqItems) {
+    const button = item.querySelector(".cs-button") as HTMLButtonElement;
+
+    const onClick = () => {
+      faqItems.forEach(faq => {
+        if (faq !== item) {
+          faq.classList.remove("active");
+        }
+      });
+      item.classList.toggle("active");
+    };
+
+    button.addEventListener("click", onClick);
+  }
+</script>

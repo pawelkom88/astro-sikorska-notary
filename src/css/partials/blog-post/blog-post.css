@@ -1,0 +1,161 @@
+.article-date {
+  display: block;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.article-heading {
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+  border-bottom-width: 2px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.article-paragraph {
+  line-height: 1.8;
+  letter-spacing: normal;
+  font-weight: 400;
+  text-align: justify;
+  margin: 0.5rem 0;
+  text-indent: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .article-heading {
+    margin-bottom: 1rem 0 0 0;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .article-heading {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-date {
+    margin-top: 3rem;
+  }
+}
+
+.grid-container {
+  padding-bottom: 2rem;
+  border-top-width: 1px;
+  border-color: #d1d5db;
+}
+
+@media (min-width: 1280px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 2rem;
+    border-top-width: 0;
+  }
+}
+
+.sidebar {
+  grid-column: span 1 / span 1;
+}
+
+.contact-info {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 1280px) {
+  .contact-info {
+    padding-top: 2.75rem;
+    border-bottom-width: 1px;
+    border-color: #d1d5db;
+  }
+}
+
+.author-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .author-list {
+    margin-left: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .author-list {
+    display: block;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+.author-item {
+  display: flex;
+  margin-left: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 100%;
+}
+
+.author-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.author-name {
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.author-email a {
+  color: #c29b38;
+  text-decoration: underline;
+}
+
+.author-email a:hover {
+  color: #d1d5db;
+}
+
+.post-link {
+  padding: 2rem 0;
+  font-size: 1rem;
+  color: #000080;
+}
+
+@media (max-width: 575px) {
+  .post-link {
+    padding: 0;
+  }
+}
+
+.main-content {
+  margin-top: 2rem;
+  grid-column: span 3 / span 3;
+}
+
+.main-image {
+  object-fit: cover;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+}

@@ -1,0 +1,29 @@
+.contact__about {
+  max-width: 90ch;
+  margin: 4rem auto;
+}
+
+.contact__office {
+  width: 100%;
+  height: auto;
+}
+
+.contact > .form {
+  max-width: 50%;
+  margin: 0 auto 4rem;
+  padding: 2.3rem;
+}
+@media (max-width: 900px) {
+  .contact > .form {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .contact > .form {
+    padding: 5rem;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}

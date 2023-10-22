@@ -1,0 +1,158 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs.astro";
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import { routes } from "../components/header/Header.astro";
+---
+
+<Layout
+  title="Legal and Regulatory Information - Sikorska Notary Limited"
+  description="Access detailed legal and regulatory information about Sikorska Notary Limited, including our registration, insurance, and comprehensive complaint procedures to ensure the highest standard of service.">
+  <ContentLayout>
+    <h1 class="heading">Legal and Regulatory Guidelines</h1>
+    <article>
+      <h2>Regulatory information</h2>
+      <br />
+      <p class="paragraph">
+        Sikorska Notary Limited is a private limited company registered at the Companies House of
+        England and Wales with number 14336748.
+      </p>
+      <br />
+      <p class="paragraph">
+        Sikorska Notary Limited supplies notarial services to individuals throughout England and
+        Wales.
+      </p>
+      <br />
+      <p class="paragraph">
+        Sikorska Notary Limited Faculties through the Faculty Office of the Archbishop of
+        Canterbury:
+      </p>
+      <br />
+      <br />
+      <address class="list-indent">
+        <strong>The Faculty Office :</strong>
+        <br />
+        <br />
+        <p>1 The Sanctuary, Westminster, London SW1P 3JT</p>
+        <br />
+        <p>Phone: <a href="tel:02072225381">020 7222 5381</a></p>
+        <br />
+        <p>
+          Email: <a href="mailto:faculty.office@1thesanctuary.com">faculty.office@1thesanctuary.com</a>
+        </p>
+        <br />
+        <p>
+          Website: <a href="https://www.facultyoffice.org.uk">www.facultyoffice.org.uk</a>
+        </p>
+      </address>
+    </article>
+
+    <br />
+    <article>
+      <h2>Redress Information</h2>
+      <br />
+      <p class="paragraph">
+        Sikorska Notary maintains professional indemnity liability cover, which is at least the
+        minimum level of cover specified by the Master of the Faculties (presently £1 million).
+        Sikorska Notary’s professional indemnity insurance is underwritten by HCC International
+        Insurance Company PLC Fitzwilliam House, 10 St Mary Axe, London EC3A 8BF.
+      </p>
+      <br />
+
+      <p class="paragraph">
+        Further information on Sikorska Notary’s insurance cover may be obtained by sending e-mail
+        to <a href="mailto:ps@sikorskanotary.co.uk">ps@sikorskanotary.co.uk</a>.
+      </p>
+      <br />
+      <h2>Complaint Procedure Information</h2>
+      <br />
+      <p class="paragraph">
+        Sikorska Notary aims to provide all clients with efficient and high standard of services.
+        However, in the unlikely event that you should wish to complain, please get in touch with us
+        immediately so that we can do our best to resolve the problem for you.
+      </p>
+      <br />
+      <ol>
+        <li class="line-height">
+          If you are dissatisfied about the service you have received please do not hesitate to
+          contact us directly to discuss any concerns and we will do our best to resolve any issues
+          at this stage. Our telephone number is
+          <a href="tel:447401388094">+44 7401388094</a> and email address is
+          <a href="mailto:ps@sikorskanotary.co.uk">ps@sikorskanotary.co.uk</a>.
+        </li>
+        <br />
+        <li class="line-height">
+          If we are unable to resolve the matter you may then complain to the Notaries Society of
+          which we are a members, and who have a complaints procedure approved by the Faculty
+          Office. This procedure is free to use and is designed to provide a quick resolution to any
+          dispute. In that case please write (but do not enclose any original documents) with full
+          details of your complaint to:
+        </li>
+        <br />
+        <address class="list-indent">
+          <p>Christopher Vaughan</p>
+          <br />
+          <p>Secretary of The Notaries Society</p>
+          <br />
+          <p>PO Box 7655</p>
+          <br />
+          <p>Milton Keynes</p>
+          <br />
+          <p>MK11 9NR</p>
+          <br />
+          <p>telephone: <a href="tel:01908 803527">01908 803527</a></p>
+          <br />
+          <p>
+            email: <a href="mailto:secretary@thenotariessociety.org.uk">secretary@thenotariessociety.org.uk</a>.
+          </p>
+        </address>
+
+        <br />
+        <li class="line-height">
+          Finally, even if you have your complaint considered under the Notaries Society’s
+          Complaints Procedure, you may at the end of that procedure or after a period of eight
+          weeks from the date you first notified us that you were dissatisfied, make your complaint
+          to the Legal Ombudsman if you are not happy with the result.
+        </li>
+        <br />
+        <address>
+          <strong>The Legal Ombudsman’s contact details are:</strong>
+          <br />
+          <br />
+          <p>Legal Ombudsman</p>
+          <br />
+          <p>PO Box 6806</p>
+          <br />
+          <p>Wolverhampton</p>
+          <br />
+          <p>WV1 9WJ</p>
+          <br />
+          <p>telephone: <a href="tel:0300 555 0333">0300 555 0333</a></p>
+          <br />
+          <p>
+            email: <a href="mailto:enquiries@legalombudsman.org.uk">enquiries@legalombudsman.org.uk</a>
+          </p>
+          <br />
+          <p>website: <a href="https://www.legalombudsman.org.uk/">www.legalombudsman.org.uk</a></p>
+        </address>
+      </ol>
+      <br />
+      <br />
+      <p class="paragraph">
+        If you decide to make a complaint to the Legal Ombudsman, you must refer your matter to the
+        Legal Ombudsman within six months from the conclusion of the complaint process.
+      </p>
+      <br />
+      <br />
+    </article>
+
+    <Breadcrumbs
+      links={[
+        { name: "Notarial service", href: routes.notarialService },
+        { name: "Apostille & Legislation", href: routes.apostilleAndLegislation },
+      ]}
+      current="Legal & Regulatory information"
+    />
+  </ContentLayout>
+</Layout>

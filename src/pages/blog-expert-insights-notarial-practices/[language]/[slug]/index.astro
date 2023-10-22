@@ -1,0 +1,112 @@
+---
+import { englishPosts, polishPosts } from "../../posts";
+import { Picture } from "astro:assets";
+import avatar from "../../../../images/avatar.png";
+import ContentLayout from "../../../../layouts/ContentLayout.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import "../../../../css/partials/blog-post/blog-post.css";
+import { formatDate } from "../../../../utils/utils";
+import { routes } from "../../../../components/header/Header.astro";
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.includes("eng");
+const language = isEnglish ? "eng" : "pl";
+
+export async function getStaticPaths() {
+  return [...englishPosts, ...polishPosts].flatMap(post => {
+    return [
+      {
+        params: { language: "pl", slug: post.slug },
+        props: {
+          post: post.summary,
+          date: post.date,
+          title: post.title,
+          content: post.content,
+          image: post.image,
+        },
+      },
+
+      {
+        params: { language: "eng", slug: post.slug },
+        props: {
+          post: post.summary,
+          date: post.date,
+          title: post.title,
+          content: post.content,
+          image: post.image,
+        },
+      },
+    ];
+  });
+}
+
+const { date, title, content, image } = Astro.props;
+---
+
+<Layout>
+  <main>
+    <ContentLayout>
+      <time class="article-date" datetime={date}>
+        {formatDate(date, language)}
+      </time>
+      <h1 class="article-heading">
+        {title}
+      </h1>
+      <hr />
+      <div class="grid-container">
+        <div class="sidebar">
+          <dl class="contact-info">
+            <dt class="sr-only">Authors</dt>
+            <dd>
+              <ul class="author-list">
+                <li class="author-item">
+                  <Picture
+                    width={50}
+                    height={50}
+                    formats={["avif", "webp"]}
+                    src={avatar}
+                    alt="Avatar"
+                    class="avatar"
+                  />
+                  <dl class="author-text">
+                    <dt class="sr-only">Name</dt>
+                    <dd class="author-name">Patrycja Sikorska</dd>
+                    <dd class="author-email">
+                      <a href="mailto:ps@sikorskanotary.co.uk" class="email-link"
+                        >ps@sikorskanotary.co.uk</a
+                      >
+                    </dd>
+                  </dl>
+                </li>
+                <li class="post-link">
+                  <a href={isEnglish ? `${routes.blog}/eng` : `${routes.blog}/pl`}>
+                    ← {isEnglish ? "All Articles" : "Wszystkie artykuły"}
+                  </a>
+                </li>
+                <hr />
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <div class="main-content">
+          <Picture
+            class="main-image"
+            formats={["avif", "webp"]}
+            src={image}
+            alt="Avatar"
+            width={1000}
+            height={500}
+          />
+          <br />
+          <p class="content">
+            {
+              content.map(({ paragraph }: { paragraph: string }) => {
+                return <p class="article-paragraph">{paragraph}</p>;
+              })
+            }
+          </p>
+        </div>
+      </div>
+    </ContentLayout>
+  </main>
+</Layout>

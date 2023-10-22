@@ -1,0 +1,81 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs.astro";
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import { routes } from "../components/header/Header.astro";
+
+---
+
+<Layout
+  title="Apostille & Legislation Services in Bristol | Sikorska Notary"
+  description="Sikorska Notary offers expert apostille and legislation services in Bristol, ensuring your documents are authenticated for international use. Learn about our efficient legalisation process, apostille certification, and consular legalisation services tailored for individuals and businesses.">
+  <ContentLayout>
+    <h1 class="heading">Expert Apostille & Legislation Services in Bristol</h1>
+    <br />
+    <p class="paragraph">
+      Legalisation is the process by which the signature and seal of the notary are authenticated by
+      the Foreign Office and the Consulate of the country in which the document is to be used.
+    </p>
+    <br />
+    <p class="paragraph">
+      Countries which are part of the Commonwealth most likely do not require notarial acts issued
+      in the United Kingdom to be legalised. However, it is always best to confirm this with the
+      receiving jurisdiction to avoid unnecessary delays.
+    </p>
+    <br />
+    <br />
+    <h2>Understanding Apostille Legislation</h2>
+    <br />
+    <p class="paragraph">
+      It is sufficient to legalise documents for use in Countries that have accepted the Hague
+      Convention of 5th October 1961 over the legalisation of public documents by way of an
+      Apostille at the Foreign, Commonwealth & Development Office (FCDO).
+    </p>
+    <br />
+    <p class="paragraph">
+      Apostille is an official certificate that the FCDO will add to the back of some documents
+      before they can be used abroad.
+    </p>
+    <p class="paragraph">
+      The FCDO offers the options of Premium or Standard services. However, the premium service is
+      only available to registered businesses. For more information, please visit:<a
+        href="https://www.gov.uk/get-document-legalised">
+        https://www.gov.uk/get-document-legalised</a
+      >
+    </p>
+    <br />
+    <br />
+    <h2>Consular & Embassy Legalisation Explained</h2>
+    <br />
+    <p class="paragraph">
+      Countries which are not party to the Hague Convention of 5th October 1961 over the
+      legalisation of public documents must obtain legalisation of the documents at the Consulate/
+      Embassy of the relevant country. In some cases, Apostille is still required before the
+      Consular Legalisation is affixed.
+    </p>
+    <br />
+    <br />
+    <h2>Personalised Legalisation Assistance</h2>
+    <br />
+    <p class="paragraph">
+      Sikorska Notary uses specialised agents assisting private individuals and corporate clients
+      with their document attestation and legalisation requirements for use worldwide.
+    </p>
+    <br />
+    <p class="paragraph">
+      It would be best to send us a copy of any document you need legalised, so we can advise
+      accordingly and provide you with the accurate fee quote. If you are unsure about whether or
+      not you need any documents to be legalised, simply contact me.
+    </p>
+    <br />
+    <br />
+    <Breadcrumbs
+      links={[
+        { name: "Regulatory", href: routes.legalAndRegulatory },
+        { name: "Fees", href: routes.feesAndDisbursements },
+      ]}
+      current="Apostille & Legislation"
+    />
+  </ContentLayout>
+</Layout>

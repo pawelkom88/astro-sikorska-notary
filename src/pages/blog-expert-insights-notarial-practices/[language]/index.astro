@@ -1,0 +1,54 @@
+---
+import ContentLayout from "../../../layouts/ContentLayout.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { englishPosts, polishPosts } from "../posts";
+import "../../../css/partials/blog/blog.css";
+import { formatDate } from "../../../utils/utils";
+import { routes } from "../../../components/header/Header.astro";
+
+const currentPath = Astro.url.pathname;
+
+const isEnglish = currentPath.includes("eng");
+
+const posts = isEnglish ? englishPosts : polishPosts;
+const language = isEnglish ? "eng" : "pl";
+
+export function getStaticPaths() {
+  return [{ params: { language: "pl" } }, { params: { language: "eng" } }];
+}
+---
+
+<Layout>
+  <ContentLayout>
+    <h2 class="page-heading">
+      {isEnglish ? "Latest articles" : "Najnowsze artykuły"}
+    </h2>
+    {
+      posts.map(({ title, summary, slug, date }) => {
+        const linkToPost = isEnglish ? `${routes.blog}/eng/${slug}` : `${routes.blog}/pl/${slug}`;
+
+        return (
+          <article class="blog-article">
+            <dl>
+              <dt class="sr-only">{isEnglish ? "Published on" : "Data publikacji"}</dt>
+              <dd class="blog-article__date">
+                <time datetime={date}>{formatDate(date, language)}</time>
+              </dd>
+            </dl>
+            <div class="article">
+              <div>
+                <h1 class="article-heading">
+                  <a href={linkToPost}>{title}</a>
+                </h1>
+                <div class="article-summary">{summary}</div>
+              </div>
+              <a href={linkToPost} class="article-link" aria-label={`Read "${title}"`}>
+                {isEnglish ? "Click to start reading" : "Kliknij aby zacząć czytać"} &rarr;
+              </a>
+            </div>
+          </article>
+        );
+      })
+    }
+  </ContentLayout>
+</Layout>

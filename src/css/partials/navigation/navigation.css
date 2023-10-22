@@ -1,0 +1,42 @@
+.nav-bar,
+.nav-links {
+  display: flex;
+  gap: 1.5vw;
+}
+
+.nav-bar {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: clamp(0.7rem, 0.4rem + 0.6vw, 1.1rem);
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  cursor: pointer;
+  z-index: 100;
+}
+
+.latin {
+  position: absolute;
+  right: 12vw;
+  bottom: 5vh;
+  font-size: clamp(0.9rem, 0.4rem + 1vw, 2rem);
+  opacity: 0.8;
+}
+@media (max-width: 575px) {
+  .latin {
+    display: none;
+  }
+}

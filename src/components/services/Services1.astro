@@ -1,0 +1,47 @@
+---
+import "../../css/partials/services/services.css";
+import ServicesItem from "./ServicesItem.astro";
+
+const services = [
+  {
+    question: "What is the Mobile Notary Service?",
+    answer:
+      "In a world where convenience is key, Sikorska Notary stands out by offering a mobile notary service in Bristol. I understand your need for convenience and flexibility, hence I travel to meet you at your office, home, or any location of your choice, ensuring your notarial needs are met with utmost professionalism and efficiency.",
+  },
+  {
+    question: "Do you offer Evening and Weekend Appointments?",
+    answer:
+      "I recognise that legal needs aren’t confined to regular business hours. That’s why I am proud to offer evening and weekend notary appointments in Bristol. I am here when you need us, ready to adapt to your schedule, ensuring that your urgent legal requirements are addressed promptly.",
+  },
+  {
+    question: "How does Polish Language Notarization work?",
+    answer:
+      "For documents intended for Poland, rest easy knowing you’re covered. As a Polish-speaking notary, I certify documents in Polish, eliminating the need for translation and the associated extra costs, making the process simpler and more cost-effective for you.",
+  },
+  {
+    question: "What are the services included in Notarized Translations?",
+    answer:
+      "Language barriers are non-existent at Sikorska Notary. I offer notarized translations from Polish to English and vice versa, ensuring your documents are both legally compliant and linguistically accurate.",
+  },
+  {
+    question: "What can I expect from the Notarial Services?",
+    answer:
+      "At Sikorska Notary, each client is treated with individualised attention, ensuring that your unique legal needs are met with precision and professionalism. I offer a suite of notarial services, each designed to bring convenience, efficiency, and expertise to your doorstep.",
+  },
+];
+---
+
+<section style="min-height: fit-content" id="faq-1263">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h2 class="heading">Comprehensive Notarial Services FAQ</h2>
+    </div>
+    <ul class="cs-faq-group">
+      {
+        services.map(service => {
+          return <ServicesItem title={service.question} content={service.answer} />;
+        })
+      }
+    </ul>
+  </div>
+</section>

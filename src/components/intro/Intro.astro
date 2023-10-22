@@ -1,0 +1,46 @@
+---
+import "../../css/style.css";
+import "../../css/partials/info/info.css";
+import { routes } from "../header/Header.astro";
+---
+<h2 class="heading">Welcome to Sikorska Notary</h2>
+<p class="info__alert">Before contacting the Notary Public</p>
+<p class="paragraph">
+  A notary is a legal professional who can provide notarial services to clients who have business,
+  property or family interests abroad. Notarial services include witnessing signatures, certifying
+  documents, administering oaths, and verifying identities. A notary can certify documents such as
+  passports, diplomas, contracts, and deeds. Each case a notary deals with is different and may
+  require different documents and procedures depending on the receiving country and the purpose of
+  the notarial act. Therefore, it is especially important that a notary is presented with the
+  relevant information as soon as the client makes initial contact. This will help the notary to
+  advise the client on what is required and how long it will take to complete the notarial matter.
+</p>
+<br />
+<p class="paragraph">
+  Before meeting a notary, a client will be interviewed regarding the matter and people intervening
+  in the act. This will aim to identify all documents and evidence that should be presented to a
+  notary for inspection.
+</p>
+<br />
+<p class="paragraph">
+  A notarisation provides a guarantee that the act is lawful and not the result of fraud or
+  violence. Therefore, a notary must be satisfied with the identity of the person appearing before
+  them to sign a document, with that person's mental and statutory capacity, understanding of the
+  act and willingness to be bound to all provisions.
+</p>
+<br />
+<p class="paragraph">
+  The Notary will usually be able to tell you the fee and any disbursements payable to third parties
+  once they have received details of what is required. For complex matters you will receive details
+  of how the fee will be charged, and an estimate of how long it is likely to take to deal with the
+  matter. However, in some cases this is not known at the outset.
+</p>
+<br />
+<p class="paragraph">
+  To help you prepare for the meeting with a notary and understand typical stages of the notarial
+  activity, <span>please refer to the applicable guidance below</span>:
+</p>
+<div class="info__clients">
+  <a href={routes.individualNotaryServices} class="btn btn-individual">INDIVIDUAL CLIENTS</a>
+  <a href={routes.corporateNotaryServices} class="btn btn-corporate">CORPORATE CLIENTS</a>
+</div>

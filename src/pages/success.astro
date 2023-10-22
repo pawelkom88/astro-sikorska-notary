@@ -1,0 +1,50 @@
+---
+import { Picture } from "astro:assets";
+import "../css/partials/success/success.css";
+import ContentLayout from "../layouts/ContentLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import sikorskaNotaryLogo from "../images/logo-webp.webp";
+---
+
+<Layout>
+  <ContentLayout>
+    <div class="main-container">
+      <div class="thank-you-container">
+        <Picture
+          class="logo"
+          width="150"
+          height="150"
+          src={sikorskaNotaryLogo}
+          alt="Sikorska notary logo"
+          alt="Sikorska notary logo"
+          formats={["avif", "webp"]}
+        />
+        <h1 class="heading">Thank You for Choosing Our Notary Services</h1>
+        <p class="message">
+          We appreciate your trust in our services and are committed to providing the best notary
+          assistance.
+        </p>
+        <span class="timer message"></span>
+        <br />
+        <br />
+        <a href="#" class="button">Back to Homepage</a>
+      </div>
+    </div>
+  </ContentLayout>
+</Layout>
+
+<script>
+  (function timer() {
+    let seconds = 15;
+    const timer = setInterval(() => {
+      const time = document.querySelector(".timer")!;
+      seconds--;
+      time.innerHTML = `Automatic redirect in ${seconds}`;
+
+      if (seconds == 0) {
+        document.location.href = "https://www.sikorskanotary.co.uk";
+        clearInterval(timer);
+      }
+    }, 1000);
+  })();
+</script>

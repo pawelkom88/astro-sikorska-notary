@@ -1,0 +1,93 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs.astro";
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import { routes } from "../components/header/Header.astro";
+---
+
+<Layout
+  title="Transparent Fees & Disbursements - Sikorska Notary Limited"
+  description="Discover transparent and fixed fees for notarial services at Sikorska Notary Limited. Understand our clear fee structure, disbursements, and how we handle changes to ensure your confidence in our services.">
+  <ContentLayout>
+    <article>
+      <h1 class="heading">Fees & Disbursements</h1>
+      <article>
+        <h2>Fees</h2>
+        <br />
+        <p class="paragraph">
+          The fees for notarial matters at Sikorska Notary are fixed to give you transparency and
+          peace of mind.
+        </p>
+        <br />
+        <p class="paragraph">
+          I charge a minimum fee of <strong>£75</strong> for notarisation of a simple document such
+          as passport, certificate or one page letter.
+        </p>
+        <br />
+        <p class="paragraph">
+          Any notarial services that are more complex will incur a higher fee. An individual fixed
+          fee quote will be provided before we commence any notarial work.
+        </p>
+        <br />
+        <p class="paragraph">
+          If it is not possible to quote a fixed fee, I will provide you with the fee structure,
+          applying an hourly rate of <strong>£240</strong>, and further provide you with a proper
+          estimate of the fee based on the information that you have provided at that time.
+        </p>
+        <br />
+        <p class="paragraph">No VAT applies to my fees.</p>
+        <br />
+        <p class="paragraph">
+          Payment can be made in pound sterling only by cash or bank transfer.
+        </p>
+      </article>
+
+      <br />
+      <br />
+      <article>
+        <h2>Disbursements</h2>
+        <br />
+        <p class="paragraph">
+          I will inform you in advance if I have to make any additional payments in your matter. You
+          are responsible for any disbursements made on your behalf such as:
+        </p>
+        <br />
+        <ul>
+          <li class="list-item">Legalisation fees payable to the FCDO and/or Consulate/ Embassy</li>
+          <li class="list-item">Translation or interpretation fees</li>
+          <li class="list-item">Agent fees</li>
+          <li class="list-item">Travelling expenses</li>
+          <li class="list-item">Courier and postage fees</li>
+          <li class="list-item">Companies House search fees</li>
+          <li class="list-item">Other third – party fee.</li>
+        </ul>
+      </article>
+      <br />
+      <br />
+      <article>
+        <h2>Changes to Fees</h2>
+        <br />
+        <p class="paragraph">
+          Occasionally unforeseen or unusual issues arise during the course of the matter which may
+          result in a revision of my fee, for example if further documents need to be notarised, or
+          if translation or legalisation became required.
+        </p>
+        <br />
+        <p class="paragraph">
+          If you would like to obtain a full and comprehensive fee quote in your matter, please
+          email <a href="mailto:ps@sikorskanotary.co.uk">ps@sikorskanotary.co.uk</a>.
+        </p>
+      </article>
+      <br />
+      <br />
+      <Breadcrumbs
+        links={[
+          { name: "Notarial service", href: routes.notarialService },
+          { name: "Regulatory", href: routes.legalAndRegulatory },
+        ]}
+        current="Fees"
+      />
+    </article>
+  </ContentLayout>
+</Layout>
